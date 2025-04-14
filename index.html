@@ -1,384 +1,269 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RDC Website</title>
-    <style>
-        /* Global Style */
-        body {
-            font-family: 'Helvetica Neue', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fff; /* White background */
-            color: #333; /* Dark text for readability */
-        }
-        h1, h2, h3 {
-            font-weight: 800;
-        }
-        a {
-            text-decoration: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDC Website</title>
 
-        /* Header */
-        header {
-            background-color: #f8f8f8; /* Light gray for header */
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;
-        }
-        header img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            margin-right: 10px;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-            margin-top: 10px;
-        }
-        nav a {
-            color: #333; /* Dark text */
-            padding: 16px 24px;
-            font-size: 18px;
-            text-align: center;
-            transition: 0.3s;
-            border-radius: 4px;
-        }
-        nav a:hover {
-            background: #ff5b00;
-            color: #fff;
-        }
-        .right-button a {
-            padding: 12px 28px;
-            background-color: #ff5b00;
-            color: white;
-            border-radius: 25px;
-            transition: background-color 0.3s;
-        }
-        .right-button a:hover {
-            background-color: #d44900;
-        }
+  <!-- Stylish Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;800&display=swap" rel="stylesheet" />
 
-        /* Content Section */
-        .content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        .section-title {
-            font-size: 30px;
-            font-weight: 800;
-            color: #333; /* Dark text */
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .tokenomics-details {
-            background-color: #f2f2f2; /* Light gray for tokenomics */
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .tokenomics-details p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 10px 0;
-            color: #333; /* Dark text */
-        }
-
-        #ca-button {
-            margin-top: 20px;
-            background-color: #ff5b00;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        #ca-button:hover {
-            background-color: #d44900;
-        }
-
-        .how-to-buy ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        .how-to-buy li {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #333; /* Dark text */
-        }
-
-        .how-to-buy a {
-            color: #ff5b00;
-            text-decoration: none;
-        }
-
-        .how-to-buy a:hover {
-            text-decoration: underline;
-        }
-
-        /* About Section */
-        .about a {
-            color: #ff5b00;
-            font-size: 18px;
-            margin-right: 20px;
-            text-decoration: none;
-        }
-        .about a:hover {
-            text-decoration: underline;
-        }
-
-        /* Disclaimer Section */
-        .disclaimer {
-            background-color: #f8f8f8; /* Light gray for disclaimer */
-            color: #333; /* Dark text */
-            text-align: center;
-            padding: 20px;
-            font-size: 16px;
-            margin-top: 40px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #f8f8f8; /* Light gray for footer */
-            color: #333; /* Dark text */
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-        footer a {
-            color: #ff5b00;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Button Animations */
-        .button {
-            padding: 14px 28px;
-            background-color: #ff5b00;
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 20px;
-            text-align: center;
-            display: inline-block;
-            transition: 0.4s;
-        }
-        .button:hover {
-            background-color: #d44900;
-            transform: scale(1.1);
-        }
-
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px;
-            }
-
-            nav {
-                flex-direction: column;
-                margin-top: 10px;
-            }
-
-            nav a {
-                padding: 12px;
-                font-size: 16px;
-            }
-
-            .right-button a {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .tokenomics-details {
-                padding: 20px;
-            }
-
-            .how-to-buy ul {
-                padding-left: 15px;
-            }
-
-            .how-to-buy li {
-                font-size: 16px;
-            }
-
-            footer {
-                font-size: 12px;
-            }
-
-            .button {
-                padding: 12px 24px;
-                font-size: 18px;
-            }
-
-            .disclaimer {
-                font-size: 14px;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav a {
-                padding: 10px;
-                font-size: 14px;
-            }
-
-            .right-button a {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-
-            .section-title {
-                font-size: 20px;
-            }
-
-            .tokenomics-details p {
-                font-size: 16px;
-            }
-
-            .how-to-buy li {
-                font-size: 14px;
-            }
-
-            footer {
-                font-size: 10px;
-            }
-
-            .button {
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-        }
-    </style>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1f1f1f;
+      color: #fff;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.light-theme {
+      background: #fff;
+      color: #000;
+    }
+    body.light-theme header,
+    body.light-theme footer,
+    body.light-theme .tokenomics-details,
+    body.light-theme .disclaimer {
+      background-color: #f2f2f2;
+      color: #000;
+    }
+    body.light-theme nav a,
+    body.light-theme .right-button a,
+    body.light-theme .about a {
+      color: #000;
+    }
+    body.light-theme .how-to-buy a {
+      color: #ff5b00;
+    }
+    h1, h2, h3, .section-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+    }
+    a {
+      text-decoration: none;
+    }
+    header {
+      background-color: #222;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+    nav a {
+      color: #fff;
+      padding: 16px 24px;
+      font-size: 18px;
+      text-align: center;
+      transition: 0.3s;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background: #ff5b00;
+    }
+    .right-button a {
+      padding: 12px 28px;
+      background-color: #ff5b00;
+      color: white;
+      border-radius: 25px;
+      transition: background-color 0.3s;
+    }
+    .right-button a:hover {
+      background-color: #d44900;
+    }
+    .content {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .tokenomics-details {
+      background-color: #333;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    .tokenomics-details p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+    #ca-button {
+      margin-top: 20px;
+      background-color: #ff5b00;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    #ca-button:hover {
+      background-color: #d44900;
+    }
+    .how-to-buy ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    .how-to-buy li {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: inherit;
+    }
+    .how-to-buy a {
+      color: #ff5b00;
+      text-decoration: none;
+    }
+    .how-to-buy a:hover {
+      text-decoration: underline;
+    }
+    .about a {
+      color: #ff5b00;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+    .about a:hover {
+      text-decoration: underline;
+    }
+    .disclaimer {
+      background-color: #222;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      margin-top: 40px;
+    }
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #ff5b00;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .button {
+      padding: 14px 28px;
+      background-color: #ff5b00;
+      color: white;
+      border-radius: 50px;
+      font-size: 20px;
+      display: inline-block;
+      transition: 0.4s;
+    }
+    .button:hover {
+      background-color: #d44900;
+      transform: scale(1.1);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .right-button a {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      .section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div style="display: flex; align-items: center;">
-        <img src="your-logo.png" alt="Logo">
-        <h1 style="margin: 0; font-size: 28px; color: #ff5b00;">RDC</h1>
-    </div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#howtobuy">How To Buy?</a>
-    </nav>
-
+  <div style="display: flex; align-items: center;">
+    <img src="your-logo.png" alt="Logo">
+    <h1 style="margin: 0; font-size: 28px; color: #ff5b00;">RDC</h1>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#howtobuy">How To Buy?</a>
+  </nav>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <button id="theme-toggle" style="background:none;border:none;color:#ff5b00;font-size:20px;cursor:pointer;">🌓</button>
     <div class="right-button">
-        <a href="#" id="buy-rdc-link">Buy RDC</a>
+      <a href="#" id="buy-rdc-link">Buy RDC</a>
     </div>
+  </div>
 </header>
 
-<div class="content" id="home">
-    <h2 class="section-title">About RDC (Retarded Dog Coin)</h2>
-    <p>RDC (Retarded Dog Coin) is a fun and community-driven token built on the Base chain. Inspired by the success of meme tokens, RDC aims to provide a playful and unique experience for its holders. With a zero-tax system and an active community, RDC offers a no-hassle way to participate in the memecoin space.</p>
-
-    <p>Stay connected with us through our official channels:</p>
-    <div class="about">
-        <a href="https://twitter.com/YourRDCHandle" target="_blank">Twitter</a>
-        <a href="https://dexscreener.com/base/YourRDCPair" target="_blank">Dexscreener</a>
-    </div>
+<div class="content" id="home" data-aos="fade-up">
+  <h2 class="section-title">About RDC (Retarded Dog Coin)</h2>
+  <p>RDC (Retarded Dog Coin) is a fun and community-driven token built on the Base chain...</p>
+  <div class="about">
+    <a href="https://twitter.com/YourRDCHandle" target="_blank">Twitter</a>
+    <a href="https://dexscreener.com/base/YourRDCPair" target="_blank">Dexscreener</a>
+  </div>
 </div>
 
-<div class="content" id="tokenomics">
-    <h2 class="section-title">Tokenomics</h2>
-    <div class="tokenomics-details">
-        <p><strong>Supply:</strong> 1B RDC</p>
-        <p><strong>Taxes:</strong> 0%</p>
-        <p><strong>Launchpad:</strong> ClizaSystems</p>
-        <p><strong>Contract Address (CA):</strong> <span id="ca-address">soon</span></p>
-        <a href="#" id="ca-button" onclick="copyCA()">Copy CA</a>
-    </div>
+<div class="content" id="tokenomics" data-aos="fade-up">
+  <h2 class="section-title">Tokenomics</h2>
+  <div class="tokenomics-details">
+    <p><strong>Supply:</strong> 1B RDC</p>
+    <p><strong>Taxes:</strong> 0%</p>
+    <p><strong>Launchpad:</strong> ClizaSystems</p>
+    <p><strong>Contract Address (CA):</strong> <span id="ca-address">soon</span></p>
+    <a href="#" id="ca-button" onclick="copyCA()">Copy CA</a>
+  </div>
 </div>
 
-<div class="content" id="howtobuy">
-    <h2 class="section-title">How To Buy RDC?</h2>
-    <div class="how-to-buy">
-        <ul>
-            <li><strong>Step 1: Set Up Your Wallet</strong>
-                <ul>
-                    <li>Download MetaMask (or any wallet that supports the Base chain).</li>
-                    <li>Make sure your wallet is connected to the Base chain network.</li>
-                    <li>Deposit ETH or other supported tokens into your wallet.</li>
-                </ul>
-            </li>
-            <li><strong>Step 2: Visit a DEX</strong>
-                <ul>
-                    <li>Go to <a href="https://app.uniswap.org" target="_blank">Uniswap</a> or a compatible DEX like BaseSwap.</li>
-                    <li>Ensure the DEX is set to the Base chain network.</li>
-                </ul>
-            </li>
-            <li><strong>Step 3: Select RDC Token</strong>
-                <ul>
-                    <li>Search for RDC by its contract address (add it manually if not listed).</li>
-                    <li>Select RDC to add it to your trade.</li>
-                </ul>
-            </li>
-            <li><strong>Step 4: Buy RDC</strong>
-                <ul>
-                    <li>Enter the amount of ETH you want to spend.</li>
-                    <li>Confirm the transaction in MetaMask after reviewing the details.</li>
-                    <li>Click Swap to execute the trade.</li>
-                </ul>
-            </li>
-            <li><strong>Step 5: Receive RDC</strong>
-                <ul>
-                    <li>Once the transaction is confirmed, RDC will be in your wallet.</li>
-                    <li>You can track the transaction on the <a href="https://base.org/explorer" target="_blank">Base Explorer</a>.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+<div class="content" id="howtobuy" data-aos="fade-up">
+  <h2 class="section-title">How To Buy RDC?</h2>
+  <div class="how-to-buy">
+    <ul><li>Step 1...</li></ul>
+  </div>
 </div>
 
-<div class="content" id="buyrdc">
-    <h2 class="section-title">Buy RDC</h2>
-    <p>Ready to buy RDC? Click below to start the process.</p>
-    <a href="#" class="button" id="buy-rdc-link">Buy RDC</a>
-</div>
-
-<div class="disclaimer">
-    <p><strong>Disclaimer:</strong> RDC is a meme token made for fun. Please do your own research and understand the risks before investing.</p>
+<div class="disclaimer" data-aos="fade-up">
+  <p><strong>Disclaimer:</strong> RDC is a meme token made for fun...</p>
 </div>
 
 <footer>
-    <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
 </footer>
 
+<!-- AOS & Theme Toggle Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Copy contract address functionality
-    function copyCA() {
-        const caText = document.getElementById('ca-address').innerText;
-        navigator.clipboard.writeText(caText).then(function() {
-            alert('Contract address copied to clipboard!');
-        });
-    }
+  AOS.init();
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+  });
+  function copyCA() {
+    const caText = document.getElementById('ca-address').innerText;
+    navigator.clipboard.writeText(caText).then(() => {
+      alert('Contract address copied to clipboard!');
+    });
+  }
 </script>
 
 </body>
