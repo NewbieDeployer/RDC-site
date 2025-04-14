@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RDC is a fun and community-driven meme token on the Base chain. Get involved with the RDC token and enjoy the experience.">
-    <meta property="og:title" content="RDC - Retarded Dog Coin">
-    <meta property="og:description" content="RDC is a meme token designed for fun. Join our community and be a part of the memecoin revolution!">
-    <link rel="icon" href="path_to_favicon.ico" type="image/x-icon">
     <title>RDC Website</title>
     <style>
         /* Global Style */
@@ -14,8 +10,8 @@
             font-family: 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
-            background: #1f1f1f;
-            color: #fff;
+            background: #fff; /* White background */
+            color: #333; /* Dark text for readability */
         }
         h1, h2, h3 {
             font-weight: 800;
@@ -26,7 +22,7 @@
 
         /* Header */
         header {
-            background-color: #222;
+            background-color: #f8f8f8; /* Light gray for header */
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
@@ -44,7 +40,7 @@
             flex: 1;
         }
         nav a {
-            color: #fff;
+            color: #333; /* Dark text */
             padding: 16px 24px;
             font-size: 18px;
             text-align: center;
@@ -53,6 +49,7 @@
         }
         nav a:hover {
             background: #ff5b00;
+            color: #fff;
         }
         .right-button a {
             padding: 12px 28px;
@@ -75,13 +72,13 @@
         .section-title {
             font-size: 30px;
             font-weight: 800;
-            color: #fff;
+            color: #333; /* Dark text */
             margin-bottom: 20px;
             text-align: center;
         }
 
         .tokenomics-details {
-            background-color: #333;
+            background-color: #f2f2f2; /* Light gray for tokenomics */
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -91,7 +88,7 @@
             font-size: 18px;
             line-height: 1.6;
             margin: 10px 0;
-            color: #fff;
+            color: #333; /* Dark text */
         }
 
         #ca-button {
@@ -114,7 +111,7 @@
         .how-to-buy li {
             margin-bottom: 15px;
             font-size: 18px;
-            color: #ddd;
+            color: #333; /* Dark text */
         }
 
         .how-to-buy a {
@@ -139,8 +136,8 @@
 
         /* Disclaimer Section */
         .disclaimer {
-            background-color: #222;
-            color: #fff;
+            background-color: #f8f8f8; /* Light gray for disclaimer */
+            color: #333; /* Dark text */
             text-align: center;
             padding: 20px;
             font-size: 16px;
@@ -149,8 +146,8 @@
 
         /* Footer */
         footer {
-            background-color: #222;
-            color: white;
+            background-color: #f8f8f8; /* Light gray for footer */
+            color: #333; /* Dark text */
             text-align: center;
             padding: 20px;
             margin-top: 40px;
@@ -184,41 +181,6 @@
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ff5b00;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            transition: 0.3s;
-        }
-        #back-to-top:hover {
-            background-color: #d44900;
-        }
-
-        /* Media Query for Small Screens */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .section-title {
-                font-size: 24px;
-            }
-            .how-to-buy ul {
-                padding-left: 10px;
-            }
         }
 
     </style>
@@ -318,9 +280,6 @@
     <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
 </footer>
 
-<!-- Back to Top Button -->
-<div id="back-to-top" onclick="scrollToTop()">↑</div>
-
 <script>
     // Copy contract address functionality
     function copyCA() {
@@ -329,22 +288,8 @@
             alert('Contract address copied to clipboard!');
         });
     }
-
-    // Back to Top Button functionality
-    window.onscroll = function() {
-        const backToTopButton = document.getElementById("back-to-top");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    };
-
-    function scrollToTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
 </script>
 
 </body>
 </html>
+
