@@ -23,21 +23,24 @@
         /* Header */
         header {
             background-color: #f8f8f8; /* Light gray for header */
-            padding: 20px 40px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
         }
         header img {
             width: 50px;
             height: 50px;
             object-fit: contain;
+            margin-right: 10px;
         }
         nav {
             display: flex;
             justify-content: center;
             flex: 1;
+            margin-top: 10px;
         }
         nav a {
             color: #333; /* Dark text */
@@ -183,6 +186,94 @@
             scroll-behavior: smooth;
         }
 
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            nav a {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .right-button a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .tokenomics-details {
+                padding: 20px;
+            }
+
+            .how-to-buy ul {
+                padding-left: 15px;
+            }
+
+            .how-to-buy li {
+                font-size: 16px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+
+            .button {
+                padding: 12px 24px;
+                font-size: 18px;
+            }
+
+            .disclaimer {
+                font-size: 14px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .right-button a {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .tokenomics-details p {
+                font-size: 16px;
+            }
+
+            .how-to-buy li {
+                font-size: 14px;
+            }
+
+            footer {
+                font-size: 10px;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -292,4 +383,3 @@
 
 </body>
 </html>
-
