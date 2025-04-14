@@ -1,270 +1,304 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RDC Website</title>
-
-  <!-- Stylish Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;800&display=swap" rel="stylesheet" />
-
-  <!-- AOS Animation Library -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <style>
+    :root {
+      --primary-color: #ff5b00;
+      --background-dark: #1f1f1f;
+      --background-light: #fff;
+      --text-dark: #fff;
+      --text-light: #1f1f1f;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Outfit', sans-serif;
       margin: 0;
       padding: 0;
-      background: #1f1f1f;
-      color: #fff;
-      transition: background 0.3s, color 0.3s;
+      background-color: var(--background-dark);
+      color: var(--text-dark);
+      transition: all 0.3s ease-in-out;
     }
-    body.light-theme {
-      background: #fff;
-      color: #000;
+
+    body.light-mode {
+      background-color: var(--background-light);
+      color: var(--text-light);
     }
-    body.light-theme header,
-    body.light-theme footer,
-    body.light-theme .tokenomics-details,
-    body.light-theme .disclaimer {
-      background-color: #f2f2f2;
-      color: #000;
-    }
-    body.light-theme nav a,
-    body.light-theme .right-button a,
-    body.light-theme .about a {
-      color: #000;
-    }
-    body.light-theme .how-to-buy a {
-      color: #ff5b00;
-    }
-    h1, h2, h3, .section-title {
-      font-family: 'Sora', sans-serif;
+
+    h1, h2, h3 {
       font-weight: 800;
     }
+
     a {
       text-decoration: none;
+      color: inherit;
     }
+
     header {
       background-color: #222;
-      padding: 20px 40px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
+    body.light-mode header {
+      background-color: #f2f2f2;
+    }
+
     header img {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
     }
+
     nav {
       display: flex;
-      justify-content: center;
-      flex: 1;
+      gap: 16px;
     }
+
     nav a {
-      color: #fff;
-      padding: 16px 24px;
-      font-size: 18px;
-      text-align: center;
-      transition: 0.3s;
+      padding: 10px 16px;
+      font-size: 16px;
       border-radius: 4px;
+      transition: background 0.3s;
     }
+
     nav a:hover {
-      background: #ff5b00;
+      background: var(--primary-color);
+      color: #fff;
     }
+
     .right-button a {
-      padding: 12px 28px;
-      background-color: #ff5b00;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
       color: white;
-      border-radius: 25px;
-      transition: background-color 0.3s;
+      border-radius: 20px;
+      font-weight: 600;
     }
+
     .right-button a:hover {
       background-color: #d44900;
     }
+
     .content {
       padding: 40px 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
     }
+
     .section-title {
-      font-size: 30px;
-      font-weight: 800;
-      margin-bottom: 20px;
+      font-size: 28px;
       text-align: center;
+      margin-bottom: 20px;
     }
+
     .tokenomics-details {
       background-color: #333;
-      padding: 25px;
+      padding: 24px;
       border-radius: 8px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      margin-top: 20px;
+      margin-top: 16px;
     }
+
+    body.light-mode .tokenomics-details {
+      background-color: #eee;
+    }
+
     .tokenomics-details p {
       font-size: 18px;
-      line-height: 1.6;
       margin: 10px 0;
     }
+
     #ca-button {
-      margin-top: 20px;
-      background-color: #ff5b00;
+      margin-top: 16px;
+      display: inline-block;
+      background-color: var(--primary-color);
       color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 5px;
+      padding: 10px 20px;
+      border-radius: 6px;
       transition: 0.3s;
     }
+
     #ca-button:hover {
       background-color: #d44900;
     }
+
     .how-to-buy ul {
-      list-style-type: none;
       padding-left: 20px;
     }
+
     .how-to-buy li {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       font-size: 18px;
-      color: inherit;
     }
-    .how-to-buy a {
-      color: #ff5b00;
-      text-decoration: none;
-    }
-    .how-to-buy a:hover {
-      text-decoration: underline;
-    }
+
     .about a {
-      color: #ff5b00;
+      color: var(--primary-color);
       font-size: 18px;
-      margin-right: 20px;
+      margin-right: 16px;
     }
-    .about a:hover {
-      text-decoration: underline;
-    }
+
     .disclaimer {
       background-color: #222;
+      color: #fff;
       text-align: center;
       padding: 20px;
-      font-size: 16px;
       margin-top: 40px;
     }
+
+    body.light-mode .disclaimer {
+      background-color: #f2f2f2;
+      color: #000;
+    }
+
     footer {
       background-color: #222;
+      color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
       font-size: 14px;
     }
-    footer a {
-      color: #ff5b00;
+
+    body.light-mode footer {
+      background-color: #f2f2f2;
+      color: #000;
     }
-    footer a:hover {
-      text-decoration: underline;
-    }
+
     .button {
       padding: 14px 28px;
-      background-color: #ff5b00;
+      background-color: var(--primary-color);
       color: white;
       border-radius: 50px;
       font-size: 20px;
-      display: inline-block;
+      text-align: center;
       transition: 0.4s;
+      display: inline-block;
     }
+
     .button:hover {
       background-color: #d44900;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
-    html {
-      scroll-behavior: smooth;
-    }
+
+    /* Responsive */
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       nav {
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
       }
-      .right-button a {
-        padding: 10px 20px;
-        font-size: 14px;
+
+      .right-button {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
       }
+
       .section-title {
         font-size: 24px;
       }
     }
+
+    .mode-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--primary-color);
+      margin-left: 20px;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="your-logo.png" alt="Logo">
+      <h1 style="margin-left: 10px; font-size: 26px; color: var(--primary-color);">RDC</h1>
+    </div>
 
-<header>
-  <div style="display: flex; align-items: center;">
-    <img src="your-logo.png" alt="Logo">
-    <h1 style="margin: 0; font-size: 28px; color: #ff5b00;">RDC</h1>
-  </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#howtobuy">How To Buy?</a>
-  </nav>
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <button id="theme-toggle" style="background:none;border:none;color:#ff5b00;font-size:20px;cursor:pointer;">🌓</button>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#howtobuy">How To Buy?</a>
+    </nav>
+
     <div class="right-button">
       <a href="#" id="buy-rdc-link">Buy RDC</a>
+      <span class="mode-toggle" onclick="toggleMode()">Toggle Mode</span>
+    </div>
+  </header>
+
+  <div class="content" id="home" data-aos="fade-up">
+    <h2 class="section-title">About RDC (Retarded Dog Coin)</h2>
+    <p>RDC is a fun and community-driven token built on the Base chain. It offers a playful and unique experience with a zero-tax system and a strong community.</p>
+    <p>Stay connected:</p>
+    <div class="about">
+      <a href="https://twitter.com/YourRDCHandle" target="_blank">Twitter</a>
+      <a href="https://dexscreener.com/base/YourRDCPair" target="_blank">Dexscreener</a>
     </div>
   </div>
-</header>
 
-<div class="content" id="home" data-aos="fade-up">
-  <h2 class="section-title">About RDC (Retarded Dog Coin)</h2>
-  <p>RDC (Retarded Dog Coin) is a fun and community-driven token built on the Base chain...</p>
-  <div class="about">
-    <a href="https://twitter.com/YourRDCHandle" target="_blank">Twitter</a>
-    <a href="https://dexscreener.com/base/YourRDCPair" target="_blank">Dexscreener</a>
+  <div class="content" id="tokenomics" data-aos="fade-up">
+    <h2 class="section-title">Tokenomics</h2>
+    <div class="tokenomics-details">
+      <p><strong>Supply:</strong> 1B RDC</p>
+      <p><strong>Taxes:</strong> 0%</p>
+      <p><strong>Launchpad:</strong> ClizaSystems</p>
+      <p><strong>Contract Address:</strong> <span id="ca-address">soon</span></p>
+      <a href="#" id="ca-button" onclick="copyCA()">Copy CA</a>
+    </div>
   </div>
-</div>
 
-<div class="content" id="tokenomics" data-aos="fade-up">
-  <h2 class="section-title">Tokenomics</h2>
-  <div class="tokenomics-details">
-    <p><strong>Supply:</strong> 1B RDC</p>
-    <p><strong>Taxes:</strong> 0%</p>
-    <p><strong>Launchpad:</strong> ClizaSystems</p>
-    <p><strong>Contract Address (CA):</strong> <span id="ca-address">soon</span></p>
-    <a href="#" id="ca-button" onclick="copyCA()">Copy CA</a>
+  <div class="content" id="howtobuy" data-aos="fade-up">
+    <h2 class="section-title">How To Buy RDC?</h2>
+    <div class="how-to-buy">
+      <ul>
+        <li><strong>Step 1:</strong> Set up MetaMask and connect to Base.</li>
+        <li><strong>Step 2:</strong> Visit <a href="https://app.uniswap.org" target="_blank">Uniswap</a>.</li>
+        <li><strong>Step 3:</strong> Add the RDC token using contract address.</li>
+        <li><strong>Step 4:</strong> Enter ETH amount and swap.</li>
+        <li><strong>Step 5:</strong> Receive RDC and track via <a href="https://base.org/explorer" target="_blank">Base Explorer</a>.</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="content" id="howtobuy" data-aos="fade-up">
-  <h2 class="section-title">How To Buy RDC?</h2>
-  <div class="how-to-buy">
-    <ul><li>Step 1...</li></ul>
+  <div class="content" id="buyrdc" data-aos="fade-up">
+    <h2 class="section-title">Buy RDC</h2>
+    <p>Click below to start the buying process.</p>
+    <a href="#" class="button">Buy RDC</a>
   </div>
-</div>
 
-<div class="disclaimer" data-aos="fade-up">
-  <p><strong>Disclaimer:</strong> RDC is a meme token made for fun...</p>
-</div>
+  <div class="disclaimer">
+    <p><strong>Disclaimer:</strong> RDC is a meme token made for fun. DYOR before investing.</p>
+  </div>
 
-<footer>
-  <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
-</footer>
+  <footer>
+    <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
 
-<!-- AOS & Theme Toggle Scripts -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  document.getElementById('theme-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-  });
-  function copyCA() {
-    const caText = document.getElementById('ca-address').innerText;
-    navigator.clipboard.writeText(caText).then(() => {
-      alert('Contract address copied to clipboard!');
-    });
-  }
-</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
 
+    function copyCA() {
+      const caText = document.getElementById('ca-address').innerText;
+      navigator.clipboard.writeText(caText).then(() => {
+        alert('Contract address copied!');
+      });
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
 </body>
 </html>
