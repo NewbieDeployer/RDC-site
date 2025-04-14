@@ -1,209 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RDC Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retarded Dog Coin (RDC)</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     :root {
-      --primary-color: #ff5b00;
+      --primary-color: #222;
+      --background-color: #ffffff;
+      --text-color: #111;
     }
 
     body {
-      font-family: 'Outfit', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #1f1f1f;
-      transition: all 0.3s ease-in-out;
-    }
-
-    h1, h2, h3 {
-      font-weight: 800;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
     }
 
     header {
-      background-color: #f2f2f2;
-      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    nav {
-      display: flex;
-      gap: 16px;
+      padding: 1rem 2rem;
+      background-color: var(--primary-color);
+      color: white;
     }
 
     nav a {
-      padding: 10px 16px;
-      font-size: 16px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background: var(--primary-color);
-      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      color: white;
     }
 
     .right-button a {
-      padding: 10px 20px;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 20px;
-      font-weight: 600;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .right-button a:hover {
-      background-color: #d44900;
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 20px;
     }
 
     .content {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
     .section-title {
-      font-size: 28px;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
       text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .tokenomics-details {
-      background-color: #eee;
-      padding: 24px;
-      border-radius: 8px;
-      margin-top: 16px;
-    }
-
-    .tokenomics-details p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    #ca-button {
-      margin-top: 16px;
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    #ca-button:hover {
-      background-color: #d44900;
-    }
-
-    .how-to-buy ul {
-      padding-left: 20px;
-    }
-
-    .how-to-buy li {
-      margin-bottom: 12px;
-      font-size: 18px;
     }
 
     .about a {
-      color: var(--primary-color);
-      font-size: 18px;
-      margin-right: 16px;
+      margin-right: 1rem;
+    }
+
+    .tokenomics-details, .how-to-buy ul {
+      line-height: 1.8;
+    }
+
+    .how-to-buy ul {
+      padding-left: 1.2rem;
     }
 
     .disclaimer {
-      background-color: #f2f2f2;
-      color: #000;
+      padding: 1rem;
+      background: #f9f9f9;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      font-size: 0.9rem;
     }
 
     footer {
-      background-color: #f2f2f2;
-      color: #000;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    .button {
-      padding: 14px 28px;
+      padding: 1rem;
       background-color: var(--primary-color);
       color: white;
-      border-radius: 50px;
-      font-size: 20px;
-      text-align: center;
-      transition: 0.4s;
-      display: inline-block;
+      font-size: 0.8rem;
     }
 
-    .button:hover {
-      background-color: #d44900;
-      transform: scale(1.05);
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      header {
+      header, nav {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      nav {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
-
       .right-button {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .section-title {
-        font-size: 24px;
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div style="display: flex; align-items: center;">
-      <img src="your-logo.png" alt="Logo">
-      <h1 style="margin-left: 10px; font-size: 26px; color: var(--primary-color);">RDC</h1>
+      <img src="your-logo.png" alt="Logo" style="height: 40px;">
+      <h1 style="margin-left: 10px; font-size: 26px; color: white;">RDC</h1>
     </div>
-
     <nav>
       <a href="#home">Home</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#howtobuy">How To Buy?</a>
     </nav>
-
-    <div class="right-button">
-      <a href="#" id="buy-rdc-link">Buy RDC</a>
-    </div>
   </header>
 
+  <!-- Hero Image -->
+  <div class="hero-image" style="text-align: center;">
+    <img src="your-image.png" alt="RDC Banner">
+  </div>
+
+  <!-- About Section -->
   <div class="content" id="home" data-aos="fade-up">
-    <h2 class="section-title">About RDC (Retarded Dog Coin)</h2>
+    <h2 class="section-title">Retarded Dog Coin (RDC)</h2>
     <p>RDC is a fun and community-driven token built on the Base chain. It offers a playful and unique experience with a zero-tax system and a strong community.</p>
     <p>Stay connected:</p>
     <div class="about">
@@ -212,6 +133,7 @@
     </div>
   </div>
 
+  <!-- Tokenomics Section -->
   <div class="content" id="tokenomics" data-aos="fade-up">
     <h2 class="section-title">Tokenomics</h2>
     <div class="tokenomics-details">
@@ -223,6 +145,7 @@
     </div>
   </div>
 
+  <!-- How to Buy Section -->
   <div class="content" id="howtobuy" data-aos="fade-up">
     <h2 class="section-title">How To Buy RDC?</h2>
     <div class="how-to-buy">
@@ -236,24 +159,20 @@
     </div>
   </div>
 
-  <div class="content" id="buyrdc" data-aos="fade-up">
-    <h2 class="section-title">Buy RDC</h2>
-    <p>Click below to start the buying process.</p>
-    <a href="#" class="button">Buy RDC</a>
-  </div>
-
+  <!-- Disclaimer -->
   <div class="disclaimer">
     <p><strong>Disclaimer:</strong> RDC is a meme token made for fun. DYOR before investing.</p>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
     function copyCA() {
       const caText = document.getElementById('ca-address').innerText;
       navigator.clipboard.writeText(caText).then(() => {
@@ -262,4 +181,5 @@
     }
   </script>
 </body>
+
 </html>
