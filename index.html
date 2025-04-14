@@ -163,58 +163,51 @@
     }
 
     /* Responsive */
-   @media (max-width: 768px) {
-  header {
-    flex-direction: column; /* Stack elements vertically on small screens */
-    align-items: flex-start;
-  }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-  header img {
-    width: 40px; /* Make logo smaller */
-    height: 40px;
-  }
+      nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
 
-  nav {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
+      .right-button {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
 
-  .right-button {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center button on mobile */
-    margin-top: 10px;
-  }
-
-  .section-title {
-    font-size: 24px; /* Adjust title size */
-  }
-}
-
+      .section-title {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
-<header>
-    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-        <img src="your-logo.png" alt="Logo" style="width: 40px; height: 40px; object-fit: contain;">
-        <h1 style="margin-left: 10px; font-size: 26px; color: var(--primary-color);">RDC</h1>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="your-logo.png" alt="Logo">
+      <h1 style="margin-left: 10px; font-size: 26px; color: var(--primary-color);">RDC</h1>
     </div>
 
-    <nav style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <a href="#home">Home</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#howtobuy">How To Buy?</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#howtobuy">How To Buy?</a>
     </nav>
 
-    <div class="right-button" style="display: flex; align-items: center;">
-        <a href="#" id="buy-rdc-link" style="padding: 10px 20px; background-color: var(--primary-color); color: white; border-radius: 20px; font-weight: 600;">Buy RDC</a>
+    <div class="right-button">
+      <a href="#" id="buy-rdc-link">Buy RDC</a>
     </div>
-</header>
-
+  </header>
 
   <div class="content" id="home" data-aos="fade-up">
-    <img src="your-image.png" alt="RDC Mascot" style="max-width:100%; border-radius: 12px; margin-bottom: 20px;">
+    <img src="your-image.jpg" alt="RDC Mascot" style="max-width:100%; border-radius: 12px; margin-bottom: 20px;">
     <h2 class="section-title">Retarded Dog Coin (RDC)</h2>
     <p>RDC is a fun and community-driven token built on the Base chain. It offers a playful and unique experience with a zero-tax system and a strong community.</p>
     <p>Stay connected:</p>
