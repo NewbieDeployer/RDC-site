@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RDC is a fun and community-driven meme token on the Base chain. Get involved with the RDC token and enjoy the experience.">
+    <meta property="og:title" content="RDC - Retarded Dog Coin">
+    <meta property="og:description" content="RDC is a meme token designed for fun. Join our community and be a part of the memecoin revolution!">
+    <link rel="icon" href="path_to_favicon.ico" type="image/x-icon">
+    <title>RDC Website</title>
+    <style>
+        /* Global Style */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1f1f1f;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            font-weight: 800;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        nav a {
+            color: #fff;
+            padding: 16px 24px;
+            font-size: 18px;
+            text-align: center;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background: #ff5b00;
+        }
+        .right-button a {
+            padding: 12px 28px;
+            background-color: #ff5b00;
+            color: white;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .right-button a:hover {
+            background-color: #d44900;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tokenomics-details {
+            background-color: #333;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .tokenomics-details p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        #ca-button {
+            margin-top: 20px;
+            background-color: #ff5b00;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        #ca-button:hover {
+            background-color: #d44900;
+        }
+
+        .how-to-buy ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .how-to-buy li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        .how-to-buy a {
+            color: #ff5b00;
+            text-decoration: none;
+        }
+
+        .how-to-buy a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Section */
+        .about a {
+            color: #ff5b00;
+            font-size: 18px;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+        .about a:hover {
+            text-decoration: underline;
+        }
+
+        /* Disclaimer Section */
+        .disclaimer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        footer a {
+            color: #ff5b00;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button Animations */
+        .button {
+            padding: 14px 28px;
+            background-color: #ff5b00;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            display: inline-block;
+            transition: 0.4s;
+        }
+        .button:hover {
+            background-color: #d44900;
+            transform: scale(1.1);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5b00;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: 0.3s;
+        }
+        #back-to-top:hover {
+            background-color: #d44900;
+        }
+
+        /* Media Query for Small Screens */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .how-to-buy ul {
+                padding-left: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center;">
+        <img src="your-logo.png" alt="Logo">
+        <h1 style="margin: 0; font-size: 28px; color: #ff5b00;">RDC</h1>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#howtobuy">How To Buy?</a>
+    </nav>
+
+    <div class="right-button">
+        <a href="#" id="buy-rdc-link">Buy RDC</a>
+    </div>
+</header>
+
+<div class="content" id="home">
+    <h2 class="section-title">About RDC (Retarded Dog Coin)</h2>
+    <p>RDC (Retarded Dog Coin) is a fun and community-driven token built on the Base chain. Inspired by the success of meme tokens, RDC aims to provide a playful and unique experience for its holders. With a zero-tax system and an active community, RDC offers a no-hassle way to participate in the memecoin space.</p>
+
+    <p>Stay connected with us through our official channels:</p>
+    <div class="about">
+        <a href="https://twitter.com/YourRDCHandle" target="_blank">Twitter</a>
+        <a href="https://dexscreener.com/base/YourRDCPair" target="_blank">Dexscreener</a>
+    </div>
+</div>
+
+<div class="content" id="tokenomics">
+    <h2 class="section-title">Tokenomics</h2>
+    <div class="tokenomics-details">
+        <p><strong>Supply:</strong> 1B RDC</p>
+        <p><strong>Taxes:</strong> 0%</p>
+        <p><strong>Launchpad:</strong> ClizaSystems</p>
+        <p><strong>Contract Address (CA):</strong> <span id="ca-address">soon</span></p>
+        <a href="#" id="ca-button" onclick="copyCA()">Copy CA</a>
+    </div>
+</div>
+
+<div class="content" id="howtobuy">
+    <h2 class="section-title">How To Buy RDC?</h2>
+    <div class="how-to-buy">
+        <ul>
+            <li><strong>Step 1: Set Up Your Wallet</strong>
+                <ul>
+                    <li>Download MetaMask (or any wallet that supports the Base chain).</li>
+                    <li>Make sure your wallet is connected to the Base chain network.</li>
+                    <li>Deposit ETH or other supported tokens into your wallet.</li>
+                </ul>
+            </li>
+            <li><strong>Step 2: Visit a DEX</strong>
+                <ul>
+                    <li>Go to <a href="https://app.uniswap.org" target="_blank">Uniswap</a> or a compatible DEX like BaseSwap.</li>
+                    <li>Ensure the DEX is set to the Base chain network.</li>
+                </ul>
+            </li>
+            <li><strong>Step 3: Select RDC Token</strong>
+                <ul>
+                    <li>Search for RDC by its contract address (add it manually if not listed).</li>
+                    <li>Select RDC to add it to your trade.</li>
+                </ul>
+            </li>
+            <li><strong>Step 4: Buy RDC</strong>
+                <ul>
+                    <li>Enter the amount of ETH you want to spend.</li>
+                    <li>Confirm the transaction in MetaMask after reviewing the details.</li>
+                    <li>Click Swap to execute the trade.</li>
+                </ul>
+            </li>
+            <li><strong>Step 5: Receive RDC</strong>
+                <ul>
+                    <li>Once the transaction is confirmed, RDC will be in your wallet.</li>
+                    <li>You can track the transaction on the <a href="https://base.org/explorer" target="_blank">Base Explorer</a>.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" id="buyrdc">
+    <h2 class="section-title">Buy RDC</h2>
+    <p>Ready to buy RDC? Click below to start the process.</p>
+    <a href="#" class="button" id="buy-rdc-link">Buy RDC</a>
+</div>
+
+<div class="disclaimer">
+    <p><strong>Disclaimer:</strong> RDC is a meme token made for fun. Please do your own research and understand the risks before investing.</p>
+</div>
+
+<footer>
+    <p>&copy; 2025 RDC. All rights reserved. | <a href="#">Privacy Policy</a></p>
+</footer>
+
+<!-- Back to Top Button -->
+<div id="back-to-top" onclick="scrollToTop()">↑</div>
+
+<script>
+    // Copy contract address functionality
+    function copyCA() {
+        const caText = document.getElementById('ca-address').innerText;
+        navigator.clipboard.writeText(caText).then(function() {
+            alert('Contract address copied to clipboard!');
+        });
+    }
+
+    // Back to Top Button functionality
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>
